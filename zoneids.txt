@@ -1,0 +1,11 @@
+CANBERRA|Australia/Canberra
+SYDNEY|Australia/Sydney
+WOLLONGONG|Australia/South
+MELBOURNE|Australia/Melbourne
+BRISBANE|Australia/Brisbane
+CAIRNS|Australia/Queensland
+GOLD COAST|Australia/Queensland
+ADELAIDE|Australia/Adelaide
+PERTH|Australia/Perth
+HOBART|Australia/Hobart
+DARWIN|Australia/Darwin
