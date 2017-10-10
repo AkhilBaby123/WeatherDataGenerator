@@ -2,8 +2,9 @@ package com.toy.util;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.ZoneId;
+import com.toy.beans.ZoneId;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -18,34 +19,45 @@ public class CommonUtil {
 	 * 
 	 * @param args
 	 *            the input arguments
+	 * @return true if arguments are valid, else false
 	 */
-	public static void validateInputArguments(String[] args) {
-		if (args.length != (2 | 3)) {
+	public static boolean validateInputArguments(String[] args) {
+		int length = args.length;
+		if (length != 2 && length != 3) {
 			System.out.println(
-					"Invalid number of arguments supplied. Usage -> Launcher <forcastStartDate> <outputFilePath> <numDays(optional)>");
-			System.exit(0);
+					"Invalid number of arguments supplied. Usage: Launcher <forcastStartDate> <outputFilePath> <numDays(optional)>");
+			return false;
 		}
 
+		String forecastDate = args[0];
 		// check whether the forecast date is in expected format
-		boolean isDateFormatValid = DateUtil.isDateFormatValid(args[0], CommonConstants.FORECAST_DATE_FORMAT);
+		boolean isDateFormatValid = DateUtil.isDateFormatValid(forecastDate, CommonConstants.DATE_FORMAT_YYYY_MM_DD);
 		if (!isDateFormatValid) {
-			System.out.println("Forcast date format is invalid...Should be in yyyy-MM-dd format");
-			System.exit(0);
+			System.out.println("Forcast date is not in expected format...Should be in yyyy-MM-dd format");
+			return false;
 		}
 
 		// Forecast date should be greater than current date
-		String currentDate = LocalDate.now(ZoneId.of("Australia/Perth")).toString();
-		int result = DateUtil.compareDates(args[0], currentDate);
+		String currentDate = LocalDate.now(java.time.ZoneId.of(CommonConstants.ZONEID_PERTH)).toString();
+		int result = DateUtil.compareDates(forecastDate, currentDate);
 		if (result <= 0) {
 			System.out.println("Forcast date should be a future date.");
-			System.exit(0);
+			return false;
 		}
-		
-		//TODO - limit number of days to 20
+
+		if (args.length == 3) {
+			try {
+				Integer.parseInt(args[2]);
+			} catch (NumberFormatException e) {
+				System.out.println("Num of Days should be numeric..");
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
-	 * Generate a map representing arguments
+	 * Store input arguments as a key value map
 	 * 
 	 * @param args
 	 *            the input arguments
@@ -53,9 +65,14 @@ public class CommonUtil {
 	 */
 	public static Map<String, String> getArgsAsMap(String[] args) {
 		Map<String, String> argsMap = new HashMap<String, String>();
-		argsMap.put(CommonConstants.FORCAST_DATE, args[0]);
+		argsMap.put(CommonConstants.FORECAST_START_DATE, args[0]);
 		argsMap.put(CommonConstants.OUTPUTFILEPATH, args[1]);
 		int numDays = args.length > 2 ? Integer.parseInt(args[2]) : CommonConstants.DEFAULT_NUM_DAYS;
+		// forecasting can be done for up to 14 days from the start date..If
+		// number of days supplied is more than 14, forecasting will be done for
+		// up to 14 days.
+		numDays = (numDays > CommonConstants.MAX_FORCAST_SIZE) ? CommonConstants.MAX_FORCAST_SIZE : numDays;
+
 		argsMap.put(CommonConstants.NUM_DAYS, Integer.toString(numDays));
 		return argsMap;
 	}
@@ -90,12 +107,73 @@ public class CommonUtil {
 		}
 		return Position.loadPositions(positionData);
 	}
-	
-	public static boolean isNullOrEmpty(String st){
-		if(st == null || st.isEmpty()){
+
+	/**
+	 * Check if the input string passed is NULL/empty
+	 * 
+	 * @param st
+	 *            the input string
+	 * @return true if the string is null/empty, else false
+	 */
+	public static boolean isNullOrEmpty(String st) {
+		if (st == null || st.isEmpty()) {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * This method reads the Zone Id file (static file) and returns a key value
+	 * representing Zone Ids read. The key will be city and value will be the
+	 * Zone ID for the city
+	 * 
+	 * @return the Zone Ids read as a key value pair. Key will be city and value
+	 *         will be zoneId representing the data read
+	 * @throws IOException
+	 */
+	public static Map<String, ZoneId> getZoneIdsAsMap() throws IOException {
+		String zoneData = FileUtil.readFile(CommonConstants.FILE_NAME_ZONE_IDS);
+		List<ZoneId> zoneIds = ZoneId.load(zoneData);
+		Map<String, ZoneId> map = new HashMap<String, ZoneId>();
+		Iterator<ZoneId> it = zoneIds.iterator();
+		while (it.hasNext()) {
+			ZoneId zoneId = it.next();
+			map.put(zoneId.getCity(), zoneId);
+		}
+		return map;
+	}
+
+	/**
+	 * This method reads the positions file (static file) and returns a key
+	 * value pair representing the positions read. The key will the city and
+	 * value will the position details for the city
+	 * 
+	 * @return the positions data read as a key value pair; key will be city and
+	 *         value will the position details corresponding to the city
+	 * @throws IOException
+	 */
+	public static Map<String, Position> getPositionsDataAsMap() throws IOException {
+		String positionData = FileUtil.readFile(CommonConstants.POSITIONS_FILE);
+		List<Position> positions = Position.loadPositions(positionData);
+		Map<String, Position> map = new HashMap<String, Position>();
+		Iterator<Position> it = positions.iterator();
+		while (it.hasNext()) {
+			Position pos = it.next();
+			map.put(pos.getCity(), pos);
+		}
+		return map;
+	}
+
+	/**
+	 * Round of the double value to 2 decimal places
+	 * 
+	 * @param value
+	 *            the value to round of
+	 * @return the round of value
+	 */
+	public static double roundOf(double value) {
+		double finalValue = Math.round(value * 100.0) / 100.0;
+		return finalValue;
 	}
 
 }

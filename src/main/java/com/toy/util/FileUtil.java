@@ -12,7 +12,7 @@ import com.toy.constants.CommonConstants;
 public class FileUtil {
 
 	/**
-	 * Read data from the file name specified.
+	 * Read data from the file specified.
 	 * 
 	 * @param fileName
 	 *            the absolute path of the file
@@ -21,8 +21,8 @@ public class FileUtil {
 	 */
 	public static String readFile(String fileName) throws IOException {
 
-		if (fileName == null || fileName.isEmpty()) {
-			System.out.println("File Name is NULL/Empty..");
+		if (CommonUtil.isNullOrEmpty(fileName)) {
+			System.out.println("File Name cannot be NULL or empty..");
 			return null;
 		}
 
@@ -37,7 +37,7 @@ public class FileUtil {
 				content.append(st);
 				content.append(CommonConstants.NEWLINE);
 			}
-		} catch (Exception e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 			return null;
 		} finally {
@@ -58,28 +58,41 @@ public class FileUtil {
 		}
 		FileWriter writer = null;
 		BufferedWriter bw = null;
-		try{
+		try {
 			writer = new FileWriter(new File(fileName), append);
 			bw = new BufferedWriter(writer);
 			bw.write(content);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}finally{
-			if(bw!=null){
+		} finally {
+			if (bw != null) {
 				bw.close();
 			}
-			if(writer!=null){
+			if (writer != null) {
 				writer.close();
 			}
 		}
 	}
-	
-	public static boolean isFileExist(String fileName){
+
+	/**
+	 * Check if the file specified by the fileName argument passed exists
+	 * 
+	 * @param fileName
+	 *            the file name
+	 * @return true if the file exists
+	 */
+	public static boolean isFileExist(String fileName) {
 		File file = new File(fileName);
 		return file.exists();
 	}
-	
-	public static void deleteFile(String fileName ) { 
+
+	/**
+	 * Delete the file if it already exist
+	 * 
+	 * @param fileName
+	 *            the file name
+	 */
+	public static void deleteFile(String fileName) {
 		File file = new File(fileName);
 		file.delete();
 	}

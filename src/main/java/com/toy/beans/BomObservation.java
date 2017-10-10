@@ -8,17 +8,23 @@ import java.util.regex.Pattern;
 import com.toy.constants.CommonConstants;
 import com.toy.util.DateUtil;
 
+/**
+ * A class representing BOM Observation data read from BOM site
+ * 
+ * @author Akhil
+ *
+ */
 public class BomObservation {
 
 	private String date;// position 1
 	private String minTemp;// position 2
 	private String maxTemperature;// position 3
 	private String sunshine;// position 6
-	
+
 	private String relativeHumidity;// position 11
 	private String cloudAmount; // position 12
 	private String windSpeed;// position 14
-	private String pressure;//position 15
+	private String pressure;// position 15
 	private String formattedDate; // the date value in yyyy-MM-dd format
 
 	public BomObservation(String date, String minTemp, String maxTemperature, String sunshine, String windSpeed,
@@ -103,6 +109,13 @@ public class BomObservation {
 		this.pressure = pressure;
 	}
 
+	/**
+	 * This method creates BOMObservation objects representing BOM data read.
+	 * 
+	 * @param data
+	 *            the data read from BOM observation file
+	 * @return the list of BOMObservations for the data read
+	 */
 	public static List<BomObservation> load(String data) {
 		String[] lines = data.split(CommonConstants.NEWLINE);
 		int i = 0;
@@ -130,7 +143,7 @@ public class BomObservation {
 	}
 
 	private void formatDate(String date) {
-		String formattedDate = DateUtil.formatDate(date, CommonConstants.FORECAST_DATE_FORMAT);
+		String formattedDate = DateUtil.formatDate(date, CommonConstants.DATE_FORMAT_YYYY_MM_DD);
 		setFormattedDate(formattedDate);
 
 	}

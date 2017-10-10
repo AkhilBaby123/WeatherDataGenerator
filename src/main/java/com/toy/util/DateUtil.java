@@ -16,7 +16,7 @@ public class DateUtil {
 	 *            the date
 	 * @param expectedFormat
 	 *            the format against which the date should be checked
-	 * @return
+	 * @return true if data is in expected format, else false;
 	 */
 	public static boolean isDateFormatValid(String date, String expectedFormat) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(expectedFormat);
@@ -30,7 +30,7 @@ public class DateUtil {
 
 	public static String formatDate(String date, String format) {
 
-		SimpleDateFormat df1 = new SimpleDateFormat(CommonConstants.FORECAST_DATE_FORMAT);
+		SimpleDateFormat df1 = new SimpleDateFormat(CommonConstants.DATE_FORMAT_YYYY_MM_DD);
 		Date formattedDate = null;
 		try {
 			formattedDate = df1.parse(date);
@@ -49,8 +49,8 @@ public class DateUtil {
 	 *            the date1
 	 * @param date2
 	 *            the date2
-	 * @return 1 if date1 is greater than date2, returns -1 if date2 is greater
-	 *         than date1 returns 0 if both dates are equal
+	 * @return 1 if date1 is after date2; return -1 if date1 is before date2;
+	 *         return 0 if both dates are equal
 	 */
 	public static int compareDates(String date1, String date2) {
 		LocalDate d1 = LocalDate.parse(date1);
@@ -58,37 +58,89 @@ public class DateUtil {
 		if (d1.isAfter(d2)) {
 			return 1;
 		}
-		if (d2.isAfter(d1)) {
+		if (d1.isBefore(d2)) {
 			return -1;
 		}
 		return 0;
 	}
 
+	/**
+	 * Subtract specified number of years from the date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @param years
+	 *            the number of years
+	 * @return the new date
+	 */
 	public static String subYears(String date, long years) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusYears(years).toString();
 	}
 
+	/**
+	 * Add specified number of months to the date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @param months
+	 *            the number of months
+	 * @return the new date
+	 */
 	public static String addMonths(String date, long months) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.plusMonths(months).toString();
 	}
 
+	/**
+	 * Subtract specified number of months from the date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @param months
+	 *            the number of months
+	 * @return the new date
+	 */
 	public static String subMonths(String date, long months) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusMonths(months).toString();
 	}
 
+	/**
+	 * Get month from a date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @return the month part
+	 */
 	public static int getMonthFromDate(String date) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.getMonth().getValue();
 	}
-	
+
+	/**
+	 * Add a specific number of days to date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @param days
+	 *            the number of days
+	 * @return the new date
+	 */
 	public static String addDays(String date, long days) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.plusDays(days).toString();
 	}
-	
+
+	/**
+	 * Subtract a specific number of days to date supplied
+	 * 
+	 * @param date
+	 *            the date
+	 * @param days
+	 *            the number of days
+	 * @return the new date
+	 */
 	public static String subDays(String date, long days) {
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusDays(days).toString();

@@ -6,7 +6,7 @@ import java.util.List;
 import com.toy.constants.CommonConstants;
 
 /**
- * A bean class holding details like City Name, IATA Code and BOM file Name
+ * A bean class holding details like City Name, IATA Code and BOM Code
  * 
  * @author Akhil
  *
@@ -15,13 +15,13 @@ public class Location {
 
 	private String cityName;
 	private String code;
-	private String bomFileName;
+	private String bomCode;
 
-	public Location(String cityName, String code, String bomFileName) {
+	public Location(String cityName, String code, String bomCode) {
 		super();
 		this.cityName = cityName;
 		this.code = code;
-		this.bomFileName = bomFileName;
+		this.bomCode = bomCode;
 	}
 
 	public String getCityName() {
@@ -32,8 +32,8 @@ public class Location {
 		return code;
 	}
 
-	public String getBomFileName() {
-		return bomFileName;
+	public String getBomCode() {
+		return bomCode;
 	}
 
 	public void setCityName(String cityName) {
@@ -44,8 +44,8 @@ public class Location {
 		this.code = code;
 	}
 
-	public void setBomFileName(String bomFileName) {
-		this.bomFileName = bomFileName;
+	public void setBomCode(String bomCode) {
+		this.bomCode = bomCode;
 	}
 
 	/**
@@ -57,21 +57,19 @@ public class Location {
 	 */
 	public static List<Location> loadLocations(String data) {
 		String[] lines = data.split(CommonConstants.NEWLINE);
-		int i = 0;
 		List<Location> locations = new ArrayList<Location>();
-		while (i < lines.length) {
+		for (int i = 0; i < lines.length; i++) {
 			String line = lines[i];
 			String[] arr = line.split(CommonConstants.DELIMITER_PIPE);
 			Location location = new Location(arr[0].trim(), arr[1].trim(), arr[2].trim());
 			locations.add(location);
-			i++;
 		}
 		return locations;
 	}
 
 	@Override
 	public String toString() {
-		return "Location [cityName=" + cityName + ", code=" + code + ", bomFileName=" + bomFileName + "]";
+		return "Location [cityName=" + cityName + ", code=" + code + ", bomFileName=" + bomCode + "]";
 	}
 
 }

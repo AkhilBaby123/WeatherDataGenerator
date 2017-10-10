@@ -1,5 +1,11 @@
 package com.toy.constants;
 
+/**
+ * Define the constants to be used for ARIMA model
+ * 
+ * @author Akhil
+ *
+ */
 public class ModelConstants {
 	public static final int MODEL_PARAM_p = 2;
 	public static final int MODEL_PARAM_d = 1;

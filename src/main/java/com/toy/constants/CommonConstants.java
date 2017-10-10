@@ -1,11 +1,18 @@
 package com.toy.constants;
 
+/**
+ * Define Common Set of Constants
+ * 
+ * @author Akhil
+ *
+ */
 public class CommonConstants {
-	public static final String FORECAST_DATE_FORMAT = "yyyy-MM-dd";
-	public static final String FORCAST_DATE = "ForecastDate";
+	public static final String DATE_FORMAT_YYYY_MM_DD = "yyyy-MM-dd";
+	public static final String FORECAST_START_DATE = "ForecastStartDate";
 	public static final String OUTPUTFILEPATH = "OutputFilePath";
 	public static final String NUM_DAYS = "NumberOfDays";
 	public static final int DEFAULT_NUM_DAYS = 10;
+	public static final int MAX_FORCAST_SIZE = 14;
 	public static final String ZONEID_PERTH = "Australia/Perth";
 	public static final String LOCATIONS_FILE = "locations.txt";
 	public static final String POSITIONS_FILE = "positions.txt";

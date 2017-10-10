@@ -10,6 +10,15 @@ import com.toy.constants.CommonConstants;
 
 public class UrlUtil {
 
+	/**
+	 * Read data from a URL supplied. The read data will be returned to the
+	 * caller
+	 * 
+	 * @param url
+	 *            the URL from the data needs to be read
+	 * @return the data read
+	 * @throws IOException
+	 */
 	public static String readUrl(String url) throws IOException {
 		URL webUrl = null;
 		URLConnection connection = null;
