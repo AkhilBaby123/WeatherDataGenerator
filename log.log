@@ -1,0 +1,558 @@
+2017-10-10 19:56:27 INFO  Launcher:48 - TEST,,,
+2017-10-10 20:02:23 INFO  Launcher:56 - Starting application with :- 
+
+2017-10-10 20:02:23 INFO  Launcher:57 - Forecast StartDate:- 2017-11-11
+ Output File Path:- test
+ Num days:- 4
+2017-10-10 20:03:54 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-10 20:12:36 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-10 20:12:36 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-10 20:12:43 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-11
+2017-10-10 20:12:43 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-12
+2017-10-10 20:12:43 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-13
+2017-10-10 20:12:43 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-14
+2017-10-10 20:15:53 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-10 20:15:53 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-10 20:15:53 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-10 20:15:56 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-10 20:15:57 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-10 20:15:58 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-11
+2017-10-10 20:15:58 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-12
+2017-10-10 20:15:58 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-13
+2017-10-10 20:15:58 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-14
+2017-10-10 20:18:34 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-10 20:18:34 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-10 20:18:34 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-10 20:18:39 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-10 20:18:39 INFO  WeatherDataGenerator:290 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-10 20:18:40 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-11
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-12
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-13
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherDataGenerator:67 - Forecasting for 2017-11-14
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 20:18:40 INFO  Launcher:73 - Writing forecasted results for CANBERRA to output file..
+2017-10-10 20:41:36 ERROR CommonUtil:39 - Forcast date is not in expected format...Should be in yyyy-MM-dd format
+2017-10-10 20:46:20 ERROR CommonUtil:39 - Forcast date is not in expected format...Should be in yyyy-MM-dd format
+2017-10-10 20:57:34 ERROR CommonUtil:39 - Forcast date is not in expected format...Should be in yyyy-MM-dd format
+2017-10-10 21:42:50 ERROR FileUtil:44 - locations_1212.txt (No such file or directory)
+2017-10-10 21:49:23 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 21:51:10 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 21:51:24 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 21:52:27 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 21:52:40 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 21:53:48 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:00:37 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:24:20 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:24:22 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:24:23 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/20171/text/IDCJDW2124.20171.csv
+2017-10-10 22:27:10 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:27:12 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:27:12 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/20171/text/IDCJDW2124.20171.csv
+2017-10-10 22:31:47 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:31:48 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:31:49 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:31:50 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:31:50 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:31:50 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:31:50 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:32:20 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:32:22 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:32:22 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:32:23 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:32:23 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:32:23 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:32:23 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:34:47 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:34:49 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:34:50 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:34:51 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:34:51 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:34:51 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:34:51 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:12 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:38:13 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:38:14 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:38:15 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:38:15 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:15 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:15 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:41 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:38:42 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:38:42 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:38:42 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:38:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:38:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:41:07 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:41:09 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:41:09 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:41:10 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:41:10 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:41:10 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:41:10 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:25 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:44:27 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:44:28 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:44:28 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:44:28 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:28 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:28 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:55 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:44:57 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:44:57 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:44:57 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:44:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:44:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:46:39 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:46:41 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:46:42 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:46:42 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:46:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:46:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:46:42 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:49:21 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:49:23 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:49:23 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:49:24 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:49:24 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:49:24 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:49:24 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:51:52 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:51:54 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:51:55 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:51:55 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:51:55 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:51:55 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:51:55 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:52:19 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:52:20 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:52:20 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:52:21 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:52:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:52:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:52:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:53:10 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:53:12 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:53:12 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:53:13 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:53:13 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:53:13 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:53:13 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:29 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:56:31 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:56:31 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:56:32 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:56:32 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:32 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:32 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:55 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-10 22:56:57 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-10 22:56:57 INFO  WeatherDataGenerator:288 - BOM URL:- http://www.bom.gov.au/climate/dwo/201701/text/IDCJDW2124.201701.csv
+2017-10-10 22:56:57 INFO  WeatherDataGenerator:66 - Forecasting for 2017-12-12
+2017-10-10 22:56:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-10 22:56:57 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:38 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-11 00:11:38 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-11 00:11:38 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:11:40 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:11:40 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:11:41 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:11:41 INFO  Launcher:73 - Writing forecasted results for CANBERRA to output file..
+2017-10-11 00:14:31 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-11 00:14:31 INFO  FileUtil:27 - Reading data from -> ./resources/positions.txt
+2017-10-11 00:14:31 INFO  FileUtil:27 - Reading data from -> ./resources/zoneids.txt
+2017-10-11 00:14:31 INFO  FileUtil:27 - Reading data from -> ./resources/locations.txt
+2017-10-11 00:14:31 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-11 00:14:31 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:14:31 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:14:35 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:14:35 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:14:36 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:36 INFO  Launcher:73 - Writing forecasted results for CANBERRA to output file..
+2017-10-11 00:14:36 INFO  Launcher:70 - Weather prediction for SYDNEY
+2017-10-11 00:14:36 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:14:36 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:14:37 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:14:37 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:14:37 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:14:37 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:14:38 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:14:38 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:38 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:14:38 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:13 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-11 00:17:13 INFO  FileUtil:27 - Reading data from -> ./resources/positions.txt
+2017-10-11 00:17:13 INFO  FileUtil:27 - Reading data from -> ./resources/zoneids.txt
+2017-10-11 00:17:13 INFO  FileUtil:27 - Reading data from -> ./resources/locations.txt
+2017-10-11 00:17:13 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-11 00:17:13 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:17:13 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:17:16 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:17:16 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:17:16 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:17:16 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:17:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:17 INFO  Launcher:73 - Writing forecasted results for CANBERRA to output file..
+2017-10-11 00:17:17 INFO  Launcher:70 - Weather prediction for SYDNEY
+2017-10-11 00:17:17 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:17:17 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:17:18 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:17:18 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:17:18 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:17:18 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:17:19 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:17:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:17:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:00 INFO  Launcher:56 - Starting application with :- 
+	Forecast StartDate:- 2017-11-11
+	Output File Path:- test
+	Num days:- 4
+2017-10-11 00:18:00 INFO  FileUtil:27 - Reading data from -> ./resources/positions.txt
+2017-10-11 00:18:00 INFO  FileUtil:27 - Reading data from -> ./resources/zoneids.txt
+2017-10-11 00:18:00 INFO  FileUtil:27 - Reading data from -> ./resources/locations.txt
+2017-10-11 00:18:00 INFO  Launcher:70 - Weather prediction for CANBERRA
+2017-10-11 00:18:00 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:18:00 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2801.201611.csv
+2017-10-11 00:18:04 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:18:04 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2801.201610.csv
+2017-10-11 00:18:04 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:18:04 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2801.201612.csv
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  Launcher:73 - Writing forecasted results for CANBERRA to output file..
+2017-10-11 00:18:05 INFO  Launcher:70 - Weather prediction for SYDNEY
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:18:05 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2124.201611.csv
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:18:05 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2124.201610.csv
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:18:05 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2124.201612.csv
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:05 INFO  Launcher:73 - Writing forecasted results for SYDNEY to output file..
+2017-10-11 00:18:05 INFO  Launcher:70 - Weather prediction for WOLLONGONG
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2146.201611.csv
+2017-10-11 00:18:05 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW2146.201611.csv
+2017-10-11 00:18:05 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2146.201610.csv
+2017-10-11 00:18:05 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW2146.201610.csv
+2017-10-11 00:18:06 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2146.201612.csv
+2017-10-11 00:18:06 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW2146.201612.csv
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:07 INFO  Launcher:73 - Writing forecasted results for WOLLONGONG to output file..
+2017-10-11 00:18:07 INFO  Launcher:70 - Weather prediction for MELBOURNE
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW3033.201611.csv
+2017-10-11 00:18:07 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW3033.201611.csv
+2017-10-11 00:18:07 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW3033.201610.csv
+2017-10-11 00:18:07 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW3033.201610.csv
+2017-10-11 00:18:08 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW3033.201612.csv
+2017-10-11 00:18:08 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW3033.201612.csv
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:09 INFO  Launcher:73 - Writing forecasted results for MELBOURNE to output file..
+2017-10-11 00:18:09 INFO  Launcher:70 - Weather prediction for BRISBANE
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4019.201611.csv
+2017-10-11 00:18:09 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4019.201611.csv
+2017-10-11 00:18:09 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4019.201610.csv
+2017-10-11 00:18:09 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4019.201610.csv
+2017-10-11 00:18:10 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4019.201612.csv
+2017-10-11 00:18:10 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4019.201612.csv
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:11 INFO  Launcher:73 - Writing forecasted results for BRISBANE to output file..
+2017-10-11 00:18:11 INFO  Launcher:70 - Weather prediction for CAIRNS
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4024.201611.csv
+2017-10-11 00:18:11 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4024.201611.csv
+2017-10-11 00:18:11 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4024.201610.csv
+2017-10-11 00:18:11 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4024.201610.csv
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4024.201612.csv
+2017-10-11 00:18:12 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4024.201612.csv
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:12 INFO  Launcher:73 - Writing forecasted results for CAIRNS to output file..
+2017-10-11 00:18:12 INFO  Launcher:70 - Weather prediction for GOLD COAST
+2017-10-11 00:18:12 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4050.201611.csv
+2017-10-11 00:18:12 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW4050.201611.csv
+2017-10-11 00:18:13 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4050.201610.csv
+2017-10-11 00:18:13 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW4050.201610.csv
+2017-10-11 00:18:13 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4050.201612.csv
+2017-10-11 00:18:13 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW4050.201612.csv
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:14 INFO  Launcher:73 - Writing forecasted results for GOLD COAST to output file..
+2017-10-11 00:18:14 INFO  Launcher:70 - Weather prediction for ADELAIDE
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW5002.201611.csv
+2017-10-11 00:18:14 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW5002.201611.csv
+2017-10-11 00:18:14 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW5002.201610.csv
+2017-10-11 00:18:14 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW5002.201610.csv
+2017-10-11 00:18:15 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW5002.201612.csv
+2017-10-11 00:18:15 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW5002.201612.csv
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:16 INFO  Launcher:73 - Writing forecasted results for ADELAIDE to output file..
+2017-10-11 00:18:16 INFO  Launcher:70 - Weather prediction for PERTH
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW6111.201611.csv
+2017-10-11 00:18:16 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW6111.201611.csv
+2017-10-11 00:18:16 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW6111.201610.csv
+2017-10-11 00:18:16 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW6111.201610.csv
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW6111.201612.csv
+2017-10-11 00:18:17 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW6111.201612.csv
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:17 INFO  Launcher:73 - Writing forecasted results for PERTH to output file..
+2017-10-11 00:18:17 INFO  Launcher:70 - Weather prediction for HOBART
+2017-10-11 00:18:17 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW7021.201611.csv
+2017-10-11 00:18:17 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW7021.201611.csv
+2017-10-11 00:18:18 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW7021.201610.csv
+2017-10-11 00:18:18 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW7021.201610.csv
+2017-10-11 00:18:18 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW7021.201612.csv
+2017-10-11 00:18:18 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW7021.201612.csv
+2017-10-11 00:18:19 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:19 INFO  Launcher:73 - Writing forecasted results for HOBART to output file..
+2017-10-11 00:18:19 INFO  Launcher:70 - Weather prediction for DARWIN
+2017-10-11 00:18:19 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW8014.201611.csv
+2017-10-11 00:18:19 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201611/text/IDCJDW8014.201611.csv
+2017-10-11 00:18:20 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW8014.201610.csv
+2017-10-11 00:18:20 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201610/text/IDCJDW8014.201610.csv
+2017-10-11 00:18:20 INFO  WeatherDataGenerator:351 - BOM URL:- http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW8014.201612.csv
+2017-10-11 00:18:20 INFO  UrlUtil:27 - Reading data from url -> http://www.bom.gov.au/climate/dwo/201612/text/IDCJDW8014.201612.csv
+2017-10-11 00:18:21 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-11
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-12
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-13
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherDataGenerator:66 - Forecasting for 2017-11-14
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  WeatherPredictor:41 - Calling ARIMA model for forecasting..
+2017-10-11 00:18:21 INFO  Launcher:73 - Writing forecasted results for DARWIN to output file..
