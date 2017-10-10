@@ -3,6 +3,9 @@ package com.toy.main;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Logger;
+
 import com.toy.beans.Location;
 import com.toy.constants.CommonConstants;
 import com.toy.model.WeatherDataGenerator;
@@ -37,16 +40,21 @@ import com.toy.util.FileUtil;
  */
 public class Launcher {
 
+	private static final Logger logger = Logger.getLogger(Launcher.class);
+
 	public static void main(String[] args) throws IOException {
 		// validate input arguments. If any of the arguments are invalid,process
 		// will stop here.
 		boolean isValid = CommonUtil.validateInputArguments(args);
 		if (!isValid) {
+			logger.error("Input arguments not valid.. Exiting..");
 			System.exit(0);
 		}
 
 		// Populate input arguments in to a map
 		Map<String, String> argsMap = CommonUtil.getArgsAsMap(args);
+		logger.info("Starting application with :- \n	Forecast StartDate:- " + args[0] + "\n	Output File Path:- "
+				+ args[1] + "\n	Num days:- " + argsMap.get(CommonConstants.NUM_DAYS));
 		String outFileName = argsMap.get(CommonConstants.OUTPUTFILEPATH);
 		// Delete output file if already exists
 		FileUtil.deleteFile(outFileName);
@@ -59,8 +67,10 @@ public class Launcher {
 		// Pull locations
 		List<Location> locations = CommonUtil.populateLocationsData();
 		for (Location location : locations) {
+			logger.info("Weather prediction for " + location.getCityName());
 			weatherDataGenerator = new WeatherDataGenerator(location);
 			weatherDataGenerator.generateForcastData();
+			logger.info("Writing forecasted results for " + location.getCityName() + " to output file..");
 			FileUtil.writeToFile(outFileName, weatherDataGenerator.getForecastData(), true);
 		}
 	}

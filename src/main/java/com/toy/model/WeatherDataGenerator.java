@@ -6,6 +6,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.log4j.Logger;
+
 import com.toy.beans.BomObservation;
 import com.toy.beans.Location;
 import com.toy.beans.Position;
@@ -27,12 +30,15 @@ import com.toy.util.UrlUtil;
  *
  */
 public class WeatherDataGenerator {
+
 	public Location location;
 	public static String forecastStartDate;
 	public static int numDays;
 	public static Map<String, Position> posMap;
 	public static Map<String, ZoneId> zoneIdsMap;
 	private StringBuilder forecastData;
+
+	private static final Logger logger = Logger.getLogger(WeatherDataGenerator.class);
 
 	/**
 	 * Initialize weather data generator
@@ -57,37 +63,48 @@ public class WeatherDataGenerator {
 		String city = location.getCityName();
 		for (int i = 0; i < numDays; i++) {
 			String forcastDate = DateUtil.addDays(forecastStartDate, i);
-			// TODO- remove
-			System.out.println("Forecast Date: " + forcastDate);
+			logger.info("Forecasting for " + forcastDate);
 			double[] tempData = getHistoricalTempData(forcastDate, obsMap);
-			System.out.println("Print Temperature data...");
-			printData(tempData);
 			double[] humidityData = getHistoricalHumidityData(forcastDate, obsMap);
-			System.out.println("Print Humidity data...");
-			printData(humidityData);
 			double[] pressureData = getHistoricalPressureData(forcastDate, obsMap);
-			System.out.println("Print Pressure data...");
-			printData(pressureData);
 			double[] forecastTempData = WeatherPredictor.forcast(tempData, CommonConstants.FORCAST_SIZE_ONE);
 			double[] forecastHumidityData = WeatherPredictor.forcast(humidityData, CommonConstants.FORCAST_SIZE_ONE);
 			double[] forecastPressureData = WeatherPredictor.forcast(pressureData, CommonConstants.FORCAST_SIZE_ONE);
+			double maxSunShineHours = getMaxSunshineHours(forcastDate, obsMap);
 			// TODO -- populate condition
-			String condition = "";
+			String condition = predictCondition(forecastTempData[0], forecastHumidityData[0], maxSunShineHours);
 			String out = generateOutput(city, forcastDate, condition, forecastTempData, forecastPressureData,
 					forecastHumidityData);
 			forecastData.append(out);
 			forecastData.append(CommonConstants.NEWLINE);
-
 		}
 	}
 
-	public void printData(double[] data) {
-		int length = data.length;
-		int i = 0;
-		while (i < length) {
-			System.out.println(data[i]);
-			i++;
+	/**
+	 * Predict Weather condition based on Temperature, Humidity and Pressure
+	 * data
+	 * 
+	 * @param temp
+	 *            the temperature
+	 * @param relativeHumidity
+	 *            the relative humidity
+	 * @param sunShineHours
+	 *            the sun shine hours
+	 * @return the condition (SUNNY, SNOW, RAIN, CLOUDY etc)
+	 */
+	private String predictCondition(double temp, double relativeHumidity, double sunShineHours) {
+
+		if (temp < 0) {
+			return "SNOW";
 		}
+		if (relativeHumidity > 80 && sunShineHours < 4) {
+			return "RAIN";
+		}
+
+		if (sunShineHours > 5) {
+			return "SUNNY";
+		}
+		return "CLOUDY";
 	}
 
 	/**
@@ -119,8 +136,8 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * This method takes forecast data as input parameters and generate a string
-	 * in a format similar to the output format
+	 * This method takes predicted data as input parameters and generate a
+	 * string in a format similar to the output format
 	 * 
 	 * @param cityName
 	 *            the city name
@@ -191,14 +208,12 @@ public class WeatherDataGenerator {
 		for (int i = 14; i > 0; i--) {
 			pressure = obsMap.get(DateUtil.subDays(bomObservationDate, i)).getPressure();
 			pressureData[arrSize] = (CommonUtil.isNullOrEmpty(pressure)) ? 0.0 : Double.parseDouble(pressure);
-			System.out.println(obsMap.get(DateUtil.subDays(bomObservationDate, i)));
 			arrSize++;
 		}
 
 		for (int j = 0; j < 15; j++) {
 			pressure = obsMap.get(DateUtil.addDays(bomObservationDate, j)).getPressure();
 			pressureData[arrSize] = (CommonUtil.isNullOrEmpty(pressure)) ? 0.0 : Double.parseDouble(pressure);
-			System.out.println(obsMap.get(DateUtil.subDays(bomObservationDate, j)));
 			arrSize++;
 		}
 
@@ -286,6 +301,41 @@ public class WeatherDataGenerator {
 	}
 
 	/**
+	 * The methods finds out the maximum sunshine by using data for one
+	 * fortnight (before and after forecast date)
+	 * 
+	 * @param forcastDate
+	 *            the forecast date
+	 * @param obsMap
+	 *            the observations map
+	 * @return the historical pressure data read
+	 */
+	private double getMaxSunshineHours(String forcastDate, Map<String, BomObservation> obsMap) {
+		int month = DateUtil.getMonthFromDate(forcastDate);
+		// if the month is after September, observation data will be for 2017,
+		// else 2016
+		String bomObservationDate = month > CommonConstants.VALUE_NINE ? DateUtil.subYears(forcastDate, 1)
+				: forcastDate;
+
+		double maxValue = 0.0;
+		String sunshineHours;
+		double hours;
+		for (int i = 14; i > 0; i--) {
+			sunshineHours = obsMap.get(DateUtil.subDays(bomObservationDate, i)).getSunshine();
+			hours = (CommonUtil.isNullOrEmpty(sunshineHours)) ? 0.0 : Double.parseDouble(sunshineHours);
+			maxValue = hours > maxValue ? hours : maxValue;
+		}
+
+		for (int j = 0; j < 15; j++) {
+			sunshineHours = obsMap.get(DateUtil.addDays(bomObservationDate, j)).getSunshine();
+			hours = (CommonUtil.isNullOrEmpty(sunshineHours)) ? 0 : Double.parseDouble(sunshineHours);
+			maxValue = hours > maxValue ? hours : maxValue;
+		}
+
+		return maxValue;
+	}
+
+	/**
 	 * This method builds the BOM URL.
 	 * 
 	 * @param bomCode
@@ -298,7 +348,7 @@ public class WeatherDataGenerator {
 		StringBuilder bomUrl = new StringBuilder(CommonConstants.BOM_BASE_URL);
 		String bomFileDate = getBomFileDate(date);
 		bomUrl.append(bomFileDate).append("/text/").append(bomCode).append(".").append(bomFileDate).append(".csv");
-		System.out.println(bomUrl.toString());
+		logger.info("BOM URL:- " + bomUrl.toString());
 		return bomUrl.toString();
 	}
 
@@ -315,8 +365,24 @@ public class WeatherDataGenerator {
 	private static String getBomFileDate(String forecastDate) {
 		int month = DateUtil.getMonthFromDate(forecastDate);
 		String year = month > CommonConstants.VALUE_NINE ? "2016" : "2017";
-		String bomFileDate = year + Integer.toString(month);
+		String bomFileDate = year + formatBomMonth(month);
 		return bomFileDate;
+	}
+
+	/**
+	 * This method format the month to BOM month format. It basically prepend a
+	 * zero if the month is before 10
+	 * 
+	 * @param month
+	 *            the month
+	 * @return formatted month
+	 */
+	private static String formatBomMonth(int month) {
+		String formattedMonth = Integer.toString(month);
+		if (month < 10) {
+			formattedMonth = "0" + formattedMonth;
+		}
+		return formattedMonth;
 	}
 
 }

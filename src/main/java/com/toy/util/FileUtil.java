@@ -7,9 +7,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
+
 import com.toy.constants.CommonConstants;
 
 public class FileUtil {
+	private static final Logger logger = Logger.getLogger(FileUtil.class);
 
 	/**
 	 * Read data from the file specified.
@@ -21,8 +24,10 @@ public class FileUtil {
 	 */
 	public static String readFile(String fileName) throws IOException {
 
+		logger.info("Reading data from -> " + fileName);
+
 		if (CommonUtil.isNullOrEmpty(fileName)) {
-			System.out.println("File Name cannot be NULL or empty..");
+			logger.error("File Name cannot be NULL or empty..");
 			return null;
 		}
 
@@ -38,7 +43,7 @@ public class FileUtil {
 				content.append(CommonConstants.NEWLINE);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 			return null;
 		} finally {
 			if (reader != null) {
@@ -53,7 +58,7 @@ public class FileUtil {
 
 	public static void writeToFile(String fileName, String content, boolean append) throws IOException {
 		if (CommonUtil.isNullOrEmpty(fileName) || CommonUtil.isNullOrEmpty(content)) {
-			System.out.println("File Name/Content to write is NULL/Empty..");
+			logger.error("File Name/Content to write is NULL/Empty..");
 			return;
 		}
 		FileWriter writer = null;

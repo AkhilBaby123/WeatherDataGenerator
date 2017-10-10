@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
-
 import com.toy.constants.CommonConstants;
 
 public class DateUtil {
@@ -18,8 +17,9 @@ public class DateUtil {
 	 *            the format against which the date should be checked
 	 * @return true if data is in expected format, else false;
 	 */
-	public static boolean isDateFormatValid(String date, String expectedFormat) {
+	public static boolean isDateFormatExpected(String date, String expectedFormat) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(expectedFormat);
+		dateFormat.setLenient(false);
 		try {
 			dateFormat.parse(date);
 		} catch (ParseException e) {
@@ -29,8 +29,8 @@ public class DateUtil {
 	}
 
 	public static String formatDate(String date, String format) {
-
 		SimpleDateFormat df1 = new SimpleDateFormat(CommonConstants.DATE_FORMAT_YYYY_MM_DD);
+		df1.setLenient(false);
 		Date formattedDate = null;
 		try {
 			formattedDate = df1.parse(date);

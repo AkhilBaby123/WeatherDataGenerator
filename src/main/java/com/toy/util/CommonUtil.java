@@ -8,11 +8,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import com.toy.beans.Location;
 import com.toy.beans.Position;
 import com.toy.constants.CommonConstants;
 
 public class CommonUtil {
+	private static final Logger logger = Logger.getLogger(CommonUtil.class);
 
 	/**
 	 * validates the input arguments passed to the main function.
@@ -24,16 +27,16 @@ public class CommonUtil {
 	public static boolean validateInputArguments(String[] args) {
 		int length = args.length;
 		if (length != 2 && length != 3) {
-			System.out.println(
+			logger.error(
 					"Invalid number of arguments supplied. Usage: Launcher <forcastStartDate> <outputFilePath> <numDays(optional)>");
 			return false;
 		}
 
 		String forecastDate = args[0];
 		// check whether the forecast date is in expected format
-		boolean isDateFormatValid = DateUtil.isDateFormatValid(forecastDate, CommonConstants.DATE_FORMAT_YYYY_MM_DD);
+		boolean isDateFormatValid = DateUtil.isDateFormatExpected(forecastDate, CommonConstants.DATE_FORMAT_YYYY_MM_DD);
 		if (!isDateFormatValid) {
-			System.out.println("Forcast date is not in expected format...Should be in yyyy-MM-dd format");
+			logger.error("Forcast date is not in expected format...Should be in yyyy-MM-dd format");
 			return false;
 		}
 
@@ -41,7 +44,7 @@ public class CommonUtil {
 		String currentDate = LocalDate.now(java.time.ZoneId.of(CommonConstants.ZONEID_PERTH)).toString();
 		int result = DateUtil.compareDates(forecastDate, currentDate);
 		if (result <= 0) {
-			System.out.println("Forcast date should be a future date.");
+			logger.error("Forcast date should be a future date.");
 			return false;
 		}
 
@@ -49,7 +52,7 @@ public class CommonUtil {
 			try {
 				Integer.parseInt(args[2]);
 			} catch (NumberFormatException e) {
-				System.out.println("Num of Days should be numeric..");
+				logger.error("Num of Days should be numeric..");
 				return false;
 			}
 		}
@@ -86,27 +89,13 @@ public class CommonUtil {
 	public static List<Location> populateLocationsData() throws IOException {
 		String locationData = FileUtil.readFile(CommonConstants.LOCATIONS_FILE);
 		if (locationData == null) {
-			System.out.println("Error Reading location data.. Exiting");
+			logger.error("Error Reading location data.. Exiting");
 			System.exit(0);
 		}
 		return Location.loadLocations(locationData);
 
 	}
 
-	/**
-	 * This method populates positions details.
-	 * 
-	 * @throws IOException
-	 * @return list of locations
-	 */
-	public static List<Position> populatePositionsData() throws IOException {
-		String positionData = FileUtil.readFile(CommonConstants.POSITIONS_FILE);
-		if (positionData == null) {
-			System.out.println("Error Reading position data.. Exiting");
-			System.exit(0);
-		}
-		return Position.loadPositions(positionData);
-	}
 
 	/**
 	 * Check if the input string passed is NULL/empty

@@ -1,5 +1,7 @@
 package com.toy.model;
 
+import org.apache.log4j.Logger;
+
 import com.toy.constants.ModelConstants;
 import com.workday.insights.timeseries.arima.Arima;
 import com.workday.insights.timeseries.arima.struct.ArimaParams;
@@ -12,6 +14,8 @@ import com.workday.insights.timeseries.arima.struct.ForecastResult;
  *
  */
 public class WeatherPredictor {
+
+	private static final Logger logger = Logger.getLogger(WeatherPredictor.class);
 
 	/**
 	 * This method predict future data based on historical data supplied. For
@@ -34,6 +38,7 @@ public class WeatherPredictor {
 		int m = ModelConstants.MODEL_PARAM_m;
 		ArimaParams params = new ArimaParams(p, d, q, P, D, Q, m);
 		// Obtain forecast result.
+		logger.info("Calling ARIMA model for forecasting..");
 		ForecastResult forecastResult = Arima.forecast_arima(histValues, forecastSize, params);
 		// Read forecast values
 		double[] forecastData = forecastResult.getForecast();

@@ -6,9 +6,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import org.apache.log4j.Logger;
+
 import com.toy.constants.CommonConstants;
 
 public class UrlUtil {
+	private static final Logger logger = Logger.getLogger(UrlUtil.class);
 
 	/**
 	 * Read data from a URL supplied. The read data will be returned to the
@@ -20,6 +23,9 @@ public class UrlUtil {
 	 * @throws IOException
 	 */
 	public static String readUrl(String url) throws IOException {
+
+		logger.info("Reading data from url -> " + url);
+
 		URL webUrl = null;
 		URLConnection connection = null;
 		BufferedReader br = null;
