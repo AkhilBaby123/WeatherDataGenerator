@@ -39,4 +39,59 @@ public class DateUtilTest {
 		result = DateUtil.compareDates(date2, date1);
 		assertEquals(expectedResult, result);
 	}
+
+	@Test
+	public void testSubYears() {
+		String date = "2017-01-01";
+		String expected = "2015-01-01";
+		String result = DateUtil.subYears(date, 2);
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void testAddMonths() {
+		String date = "2017-11-11";
+		String expected = "2018-01-11";
+		String result = DateUtil.addMonths(date, 2);
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void testSubMonths() {
+		String date = "2017-11-11";
+		String expected = "2017-07-11";
+		String result = DateUtil.subMonths(date, 4);
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void testAddDays() {
+		String date = "2017-11-11";
+		String expected = "2017-11-20";
+		String result = DateUtil.addDays(date, 9);
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void testSubDays() {
+		String date = "2017-11-11";
+		String expected = "2017-11-07";
+		String result = DateUtil.subDays(date, 4);
+		assertEquals(expected, result);
+	}
+	
+	@Test
+	public void testGetMonthFromDate() {
+		String date = "2017-11-11";
+		int expected = 11;
+		int result = DateUtil.getMonthFromDate(date);
+		assertEquals(expected, result);
+	}
+	
+	
+	
+	
+	
+	
+
 }
