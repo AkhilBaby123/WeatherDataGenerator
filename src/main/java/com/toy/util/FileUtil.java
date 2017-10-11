@@ -23,13 +23,12 @@ public class FileUtil {
 	 * @throws IOException
 	 */
 	public static String readFile(String fileName) throws IOException {
-
-		logger.info("Reading data from -> " + fileName);
-
 		if (CommonUtil.isNullOrEmpty(fileName)) {
 			logger.error("File Name cannot be NULL or empty..");
 			return null;
 		}
+
+		logger.info("Reading data from -> " + fileName);
 
 		FileReader reader = null;
 		BufferedReader br = null;
@@ -98,6 +97,10 @@ public class FileUtil {
 	 *            the file name
 	 */
 	public static void deleteFile(String fileName) {
+		if (CommonUtil.isNullOrEmpty(fileName)) {
+			logger.error("Input Argument (File Name) cannot be NULL/empty");
+			return;
+		}
 		File file = new File(fileName);
 		file.delete();
 	}

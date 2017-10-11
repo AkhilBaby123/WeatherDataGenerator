@@ -25,6 +25,12 @@ public class CommonUtil {
 	 * @return true if arguments are valid, else false
 	 */
 	public static boolean validateInputArguments(String[] args) {
+
+		if (args == null) {
+			logger.error("Input Argument cannot be NULL.. <CommonUtil.validateInputArguments>");
+			System.exit(0);
+		}
+
 		int length = args.length;
 		if (length != 2 && length != 3) {
 			logger.error(
@@ -67,6 +73,10 @@ public class CommonUtil {
 	 * @return the map representing arguments.
 	 */
 	public static Map<String, String> getArgsAsMap(String[] args) {
+		if (args == null) {
+			logger.error("Input Argument cannot be NULL.. <CommonUtil.validateInputArguments>");
+			System.exit(0);
+		}
 		Map<String, String> argsMap = new HashMap<String, String>();
 		argsMap.put(CommonConstants.FORECAST_START_DATE, args[0]);
 		argsMap.put(CommonConstants.OUTPUTFILEPATH, args[1]);
@@ -95,7 +105,6 @@ public class CommonUtil {
 		return Location.loadLocations(locationData);
 
 	}
-
 
 	/**
 	 * Check if the input string passed is NULL/empty
@@ -161,8 +170,7 @@ public class CommonUtil {
 	 * @return the round of value
 	 */
 	public static double roundOf(double value) {
-		double finalValue = Math.round(value * 100.0) / 100.0;
-		return finalValue;
+		return Math.round(value * 100.0) / 100.0;
 	}
 
 }

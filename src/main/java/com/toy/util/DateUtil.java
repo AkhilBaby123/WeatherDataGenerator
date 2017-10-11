@@ -4,9 +4,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+
+import org.apache.log4j.Logger;
+
 import com.toy.constants.CommonConstants;
 
 public class DateUtil {
+
+	private static final Logger logger = Logger.getLogger(DateUtil.class);
 
 	/**
 	 * Check if the passed date is in the expected format.
@@ -18,6 +23,12 @@ public class DateUtil {
 	 * @return true if data is in expected format, else false;
 	 */
 	public static boolean isDateFormatExpected(String date, String expectedFormat) {
+
+		if (CommonUtil.isNullOrEmpty(date) || CommonUtil.isNullOrEmpty(expectedFormat)) {
+			logger.error("Input Arguments cannot be null/empty..<DateUtil.isDateFormatExpected>");
+			return false;
+		}
+
 		SimpleDateFormat dateFormat = new SimpleDateFormat(expectedFormat);
 		dateFormat.setLenient(false);
 		try {
@@ -28,7 +39,22 @@ public class DateUtil {
 		return true;
 	}
 
+	/**
+	 * Format a date to the format specified
+	 * 
+	 * @param date
+	 *            the date to be formatted
+	 * @param format
+	 *            the format to be applied
+	 * @return
+	 */
 	public static String formatDate(String date, String format) {
+
+		if (CommonUtil.isNullOrEmpty(date) || CommonUtil.isNullOrEmpty(format)) {
+			logger.error("Input Arguments cannot be null/empty..<DateUtil.formatDate>");
+			return null;
+		}
+
 		SimpleDateFormat df1 = new SimpleDateFormat(CommonConstants.DATE_FORMAT_YYYY_MM_DD);
 		df1.setLenient(false);
 		Date formattedDate = null;
@@ -37,7 +63,6 @@ public class DateUtil {
 		} catch (ParseException e) {
 			return null;
 		}
-
 		SimpleDateFormat df2 = new SimpleDateFormat(format);
 		return df2.format(formattedDate);
 	}
@@ -53,6 +78,11 @@ public class DateUtil {
 	 *         return 0 if both dates are equal
 	 */
 	public static int compareDates(String date1, String date2) {
+		if (CommonUtil.isNullOrEmpty(date1) || CommonUtil.isNullOrEmpty(date2)) {
+			logger.error("Input Arguments cannot be null/empty..<DateUtil.compareDates>");
+			return -2;
+		}
+
 		LocalDate d1 = LocalDate.parse(date1);
 		LocalDate d2 = LocalDate.parse(date2);
 		if (d1.isAfter(d2)) {
@@ -74,6 +104,11 @@ public class DateUtil {
 	 * @return the new date
 	 */
 	public static String subYears(String date, long years) {
+		if (CommonUtil.isNullOrEmpty(date)) {
+			logger.error("Input Argument cannot be null/empty..<DateUtil.subYears>");
+			return null;
+		}
+
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusYears(years).toString();
 	}
@@ -88,6 +123,11 @@ public class DateUtil {
 	 * @return the new date
 	 */
 	public static String addMonths(String date, long months) {
+		if (CommonUtil.isNullOrEmpty(date)) {
+			logger.error("Input Argument cannot be null/empty..<DateUtil.addMonths>");
+			return null;
+		}
+
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.plusMonths(months).toString();
 	}
@@ -102,6 +142,10 @@ public class DateUtil {
 	 * @return the new date
 	 */
 	public static String subMonths(String date, long months) {
+		if (CommonUtil.isNullOrEmpty(date)) {
+			logger.error("Input Argument cannot be null/empty..<DateUtil.subMonths>");
+			return null;
+		}
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusMonths(months).toString();
 	}
@@ -128,6 +172,10 @@ public class DateUtil {
 	 * @return the new date
 	 */
 	public static String addDays(String date, long days) {
+		if (CommonUtil.isNullOrEmpty(date)) {
+			logger.error("Input Argument cannot be null/empty..<DateUtil.addDays>");
+			return null;
+		}
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.plusDays(days).toString();
 	}
@@ -142,6 +190,10 @@ public class DateUtil {
 	 * @return the new date
 	 */
 	public static String subDays(String date, long days) {
+		if (CommonUtil.isNullOrEmpty(date)) {
+			logger.error("Input Argument cannot be null/empty..<DateUtil.subDays>");
+			return null;
+		}
 		LocalDate d1 = LocalDate.parse(date);
 		return d1.minusDays(days).toString();
 	}

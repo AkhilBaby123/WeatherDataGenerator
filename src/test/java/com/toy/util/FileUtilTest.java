@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.io.IOException;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,10 +16,6 @@ public class FileUtilTest {
 	@Before
 	public void setUp() throws Exception {
 		invalidFileName = "locations_1212.txt";
-	}
-
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	@Test

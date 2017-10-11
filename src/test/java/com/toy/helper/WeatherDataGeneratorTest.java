@@ -1,4 +1,4 @@
-package com.toy.model;
+package com.toy.helper;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,10 +40,6 @@ public class WeatherDataGeneratorTest {
 		WeatherDataGenerator.zoneIdsMap = zoneIdsMap;
 		location = locations.get(0);
 		expectedForecastData = "^2017-12-12|SYDNEY|-33.86,151.12,58|.*||24.44|1014.89|57.0$";
-	}
-
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	@Test

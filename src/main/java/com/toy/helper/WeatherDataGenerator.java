@@ -1,4 +1,4 @@
-package com.toy.model;
+package com.toy.helper;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
@@ -14,17 +14,21 @@ import com.toy.beans.Location;
 import com.toy.beans.Position;
 import com.toy.beans.ZoneId;
 import com.toy.constants.CommonConstants;
+import com.toy.model.ArimaPredictor;
 import com.toy.util.CommonUtil;
 import com.toy.util.DateUtil;
 import com.toy.util.UrlUtil;
 
 /**
- * Class responsible for building input (historical) values to be used for model
- * building. For each of the locations, this class builds historical data and
- * pass the same to weather predictor for prediction
+ * Class responsible for building historical values - temperature, pressure and
+ * relative humidity information. The historical values build will be supplied
+ * to Arima model for prediction.
  * 
- * This class is also responsible for generating the output data in the
- * predefined format
+ * This class is also responsible for generating output data in a predefined
+ * format.
+ * 
+ * Output format:- Forecast_Date|Location|Latitude,Longitude,
+ * Elevation|LocalTime|Condition|Temperature|Pressure|Relative_Humidity
  * 
  * @author Akhil
  *
@@ -67,9 +71,9 @@ public class WeatherDataGenerator {
 			double[] tempData = getHistoricalTempData(forcastDate, obsMap);
 			double[] humidityData = getHistoricalHumidityData(forcastDate, obsMap);
 			double[] pressureData = getHistoricalPressureData(forcastDate, obsMap);
-			double[] forecastTempData = WeatherPredictor.forcast(tempData, CommonConstants.FORCAST_SIZE_ONE);
-			double[] forecastHumidityData = WeatherPredictor.forcast(humidityData, CommonConstants.FORCAST_SIZE_ONE);
-			double[] forecastPressureData = WeatherPredictor.forcast(pressureData, CommonConstants.FORCAST_SIZE_ONE);
+			double[] forecastTempData = ArimaPredictor.forcast(tempData, CommonConstants.FORCAST_SIZE_ONE);
+			double[] forecastHumidityData = ArimaPredictor.forcast(humidityData, CommonConstants.FORCAST_SIZE_ONE);
+			double[] forecastPressureData = ArimaPredictor.forcast(pressureData, CommonConstants.FORCAST_SIZE_ONE);
 			double maxSunShineHours = getMaxSunshineHours(forcastDate, obsMap);
 			// TODO -- populate condition
 			String condition = predictCondition(forecastTempData[0], forecastHumidityData[0], maxSunShineHours);

@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 import com.toy.beans.Location;
 import com.toy.constants.CommonConstants;
-import com.toy.model.WeatherDataGenerator;
+import com.toy.helper.WeatherDataGenerator;
 import com.toy.util.CommonUtil;
 import com.toy.util.FileUtil;
 
@@ -27,12 +27,17 @@ import com.toy.util.FileUtil;
  * program will assume 10 days as default
  * 
  * This program uses ARIMA model to forecast the weather. One fort nights data
- * (prior to forecasting data and after forecasting date) has been supplied to
+ * (prior to forecasting data and after forecasting date) will be supplied to
  * the ARIMA model as input. The historical data has been pulled from bom site
  * (http://www.bom.gov.au/climate/dwo)
  * 
  * The output of this program will be forecasted weather data for different
  * locations.
+ * 
+ * The location and position information is read from static files
+ * (locations.txt and positions.txt)
+ * 
+ * Program uses log4j for logging
  * 
  * 
  * @author Akhil
@@ -43,7 +48,7 @@ public class Launcher {
 	private static final Logger logger = Logger.getLogger(Launcher.class);
 
 	public static void main(String[] args) throws IOException {
-		// validate input arguments. If any of the arguments are invalid,process
+		// validate input arguments. If any of the arguments are invalid,program
 		// will stop here.
 		boolean isValid = CommonUtil.validateInputArguments(args);
 		if (!isValid) {

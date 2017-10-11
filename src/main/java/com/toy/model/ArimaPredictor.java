@@ -13,19 +13,19 @@ import com.workday.insights.timeseries.arima.struct.ForecastResult;
  * @author Akhil
  *
  */
-public class WeatherPredictor {
+public class ArimaPredictor {
 
-	private static final Logger logger = Logger.getLogger(WeatherPredictor.class);
+	private static final Logger logger = Logger.getLogger(ArimaPredictor.class);
 
 	/**
 	 * This method predict future data based on historical data supplied. For
 	 * forecasting, ARIMA model has been used. Forecasting will be done for up
-	 * to the value specified as forecast size argument
+	 * to <forecastSize> days from forecast start date
 	 * 
 	 * @param histValues
 	 *            the historical value to be used for prediction
 	 * @param forecastSize
-	 *            the number of days for which we need to predict
+	 *            the number of days for which forecasting needs to be done
 	 * @return the forecasted data
 	 */
 	public static double[] forcast(double[] histValues, int forecastSize) {

@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,20 +24,10 @@ public class CommonUtilTest {
 	private String[] validArguments;
 	private String[] invalidArguments;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
 	@Before
 	public void setUp() throws Exception {
 		validArguments = new String[] { "2017-12-12", "test", "3" };
 		invalidArguments = new String[] { "20170202", "test" };
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	@Test
