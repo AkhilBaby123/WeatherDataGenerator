@@ -6,28 +6,23 @@
   
   For forecasting, one fort nights data - before the forecasting date and after the forecasting date will be supplied as input values. For example, if we are doing forecasting for 15th of November, data from 1st November to 29th November will be supplied.  
   
-  The model make use of the input values supplied to predict a future condition. 
-  
-  The Java API provided by ARIMA is being used for this program. The detail of the API can be found [here](https://github.com/Workday/timeseries-forecast). 
+  The Java API provided by ARIMA is being used by this application for prediction. The detail of the API can be found [here](https://github.com/Workday/timeseries-forecast). 
   
   The usage of API is as below. 
   ```
   ForecastResult forecastResult = Arima.forecast_arima(histValues, forecastSize, params);
   ```
-   histValues - historial values supplied to the model for forecasting
+  Here forecastSize is the number of days for which forecasting needs to be done. 
+   
   
-   forecastSize - the number of days to do the forecasting
-  
-  For each of the weather condition (for example, temperature), the above method will be called to get the future data. 
-  
-  Once the forecasted results are availble, it will be written to an output file in a format as below.
+  For each of the weather condition (temperature for example), the above method will be called to get the future values. Once the results are available, it will be written to an output file a format as given below. 
   
   ```
   Forecast_Date|City|Latitude,Longitude,Elevation|Local_Time|Condition|Temperature|Pressure|Relative_Humidity
   
   ```
   
-  Sample Output for Sydney location will be as given below:-
+  Sample Output for Sydney location is as given below:-
   
   ```
   2017-12-12|SYDNEY|-33.86,151.12,58|2017-10-11T04:02:23+1100|SUNNY|24.44|1014.89|57.0
@@ -35,9 +30,9 @@
   
 ## Inputs to Application
   Following static files are being used as input to the program.
-  - [locations.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/blob/develop/resources/locations.txt) - contains the location information for different cities in Australia
-  - [positions.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/blob/develop/resources/positions.txt) - contains positions information for different cities in Australia
-  - [zoneids.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/blob/develop/resources/zoneids.txt) - contains zone ids for different cities in Australia
+  - [locations.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/tree/develop/src/main/resources/locations.txt) - contains the location information for different cities in Australia
+  - [positions.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/tree/develop/src/main/resources/positions.txt) - contains positions information for different cities in Australia
+  - [zoneids.txt](https://github.com/AkhilBaby123/WeatherDataGenerator/tree/develop/src/main/resources/zoneids.txt) - contains zone ids for different cities in Australia
   
   The input arguments to the application is as follows:- 
   
@@ -46,9 +41,9 @@
   - <b>NumDays (Optional)</b> - the number of days (starting from forecast start date) to which forecasting needs to be done
 
 ## How to Use
-   See <b>'How to Build'</b> section below to know the steps to build the application. Once the project is built, the executable jar file will be available in the target directory of the project. Use the executable jar file for running the application.
+   See <b>'How to Build'</b> section below to know the steps to build the application. Once the project is built, the executable jar file will be available in the target directory of the project. Use the executable jar to run the application.
    
-   To run:-
+   To run:
    ```
     java -cp WeatherForcast-0.1-jar-with-dependencies.jar com.toy.main.Launcher 2017-11-11 output 1
    ```
