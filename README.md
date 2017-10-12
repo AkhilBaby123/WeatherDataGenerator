@@ -52,7 +52,7 @@
    ```
     java -cp WeatherForcast-0.1-jar-with-dependencies.jar com.toy.main.Launcher 2017-11-11 output 1
    ```
-   You can also use pre-built version of executable jar available in the target location.
+   
 ## How to Build
   This application uses Maven as the build tool. Use below maven command to build the application.
   ```
