@@ -28,11 +28,11 @@ import com.toy.util.FileUtil;
  * 
  * This program uses ARIMA model to forecast the weather. One fort nights data
  * (prior to forecasting data and after forecasting date) will be supplied to
- * the ARIMA model as input. The historical data has been pulled from bom site
- * (http://www.bom.gov.au/climate/dwo)
+ * the ARIMA model as input. The historical weather data has been pulled from
+ * BOM site (http://www.bom.gov.au/climate/dwo)
  * 
- * The output of this program will be forecasted weather data for different
- * locations.
+ * The output of this program will be forecasted weather data - temperature,
+ * pressure and relative humidity for different cities across Australia
  * 
  * The location and position information is read from static files
  * (locations.txt and positions.txt)
@@ -72,12 +72,11 @@ public class Launcher {
 		// Pull locations
 		List<Location> locations = CommonUtil.populateLocationsData();
 		for (Location location : locations) {
-			logger.info("Weather prediction for " + location.getCityName());
+			logger.info("Starting weather prediction for " + location.getCityName());
 			weatherDataGenerator = new WeatherDataGenerator(location);
 			weatherDataGenerator.generateForcastData();
 			logger.info("Writing forecasted results for " + location.getCityName() + " to output file..");
 			FileUtil.writeToFile(outFileName, weatherDataGenerator.getForecastData(), true);
 		}
 	}
-
 }

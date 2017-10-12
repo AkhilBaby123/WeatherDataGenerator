@@ -55,19 +55,25 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * This method predict temperature, pressure and humidity data based on
-	 * historical data. Historical data is pulled from BOM site. For prediction,
-	 * it make use of a popular forecasting model called ARIMA.
+	 * This method predict temperature, pressure and humidity data for a city
+	 * based on historical weather data. Historical data is being pulled from
+	 * BOM site. For prediction, it make use of a popular forecasting model
+	 * called ARIMA.
+	 * 
+	 * The forecast results will be stored in forecastData variable
 	 * 
 	 * @throws IOException
 	 */
 	public void generateForcastData() throws IOException {
 		forecastData = new StringBuilder();
+		// Populate BOM Observation data; the map will 3 months of data - for
+		// the forecasting month, one month prior to forecast start
+		// date, one month after forecast start date
 		Map<String, BomObservation> obsMap = getBomObservationsAsMap(location.getBomCode(), forecastStartDate);
 		String city = location.getCityName();
 		for (int i = 0; i < numDays; i++) {
 			String forcastDate = DateUtil.addDays(forecastStartDate, i);
-			logger.info("Forecasting for " + forcastDate);
+			logger.info("Prediting weather for " + forcastDate);
 			double[] tempData = getHistoricalTempData(forcastDate, obsMap);
 			double[] humidityData = getHistoricalHumidityData(forcastDate, obsMap);
 			double[] pressureData = getHistoricalPressureData(forcastDate, obsMap);
@@ -75,7 +81,6 @@ public class WeatherDataGenerator {
 			double[] forecastHumidityData = ArimaPredictor.forcast(humidityData, CommonConstants.FORCAST_SIZE_ONE);
 			double[] forecastPressureData = ArimaPredictor.forcast(pressureData, CommonConstants.FORCAST_SIZE_ONE);
 			double maxSunShineHours = getMaxSunshineHours(forcastDate, obsMap);
-			// TODO -- populate condition
 			String condition = predictCondition(forecastTempData[0], forecastHumidityData[0], maxSunShineHours);
 			String out = generateOutput(city, forcastDate, condition, forecastTempData, forecastPressureData,
 					forecastHumidityData);
@@ -85,8 +90,8 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * Predict Weather condition based on Temperature, Humidity and Pressure
-	 * data
+	 * Predict Weather condition based on Temperature, Humidity and sunshine
+	 * hours
 	 * 
 	 * @param temp
 	 *            the temperature
@@ -140,7 +145,7 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * This method takes predicted data as input parameters and generate a
+	 * This method takes weather prediction results as input parameters and generate a
 	 * string in a format similar to the output format
 	 * 
 	 * @param cityName
@@ -233,7 +238,7 @@ public class WeatherDataGenerator {
 	 *            the forecast date
 	 * @param obsMap
 	 *            the observations map
-	 * @return the historical humidty data read
+	 * @return the historical humidity data read
 	 */
 	private double[] getHistoricalHumidityData(String forcastDate, Map<String, BomObservation> obsMap) {
 		double[] humidityData = new double[CommonConstants.WEATHER_SAMPLE_SIZE];

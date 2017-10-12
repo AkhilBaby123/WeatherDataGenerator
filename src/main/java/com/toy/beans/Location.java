@@ -14,22 +14,16 @@ import com.toy.constants.CommonConstants;
 public class Location {
 
 	private String cityName;
-	private String code;
 	private String bomCode;
 
-	public Location(String cityName, String code, String bomCode) {
+	public Location(String cityName, String bomCode) {
 		super();
 		this.cityName = cityName;
-		this.code = code;
 		this.bomCode = bomCode;
 	}
 
 	public String getCityName() {
 		return cityName;
-	}
-
-	public String getCode() {
-		return code;
 	}
 
 	public String getBomCode() {
@@ -38,10 +32,6 @@ public class Location {
 
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
 	}
 
 	public void setBomCode(String bomCode) {
@@ -61,7 +51,7 @@ public class Location {
 		for (int i = 0; i < lines.length; i++) {
 			String line = lines[i];
 			String[] arr = line.split(CommonConstants.DELIMITER_PIPE);
-			Location location = new Location(arr[0].trim(), arr[1].trim(), arr[2].trim());
+			Location location = new Location(arr[0].trim(), arr[1].trim());
 			locations.add(location);
 		}
 		return locations;
@@ -69,7 +59,7 @@ public class Location {
 
 	@Override
 	public String toString() {
-		return "Location [cityName=" + cityName + ", code=" + code + ", bomFileName=" + bomCode + "]";
+		return "Location [cityName=" + cityName + ", bomFileName=" + bomCode + "]";
 	}
 
 }

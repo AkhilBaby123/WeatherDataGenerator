@@ -22,7 +22,7 @@ public class WeatherDataGeneratorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		String locationData = "SYDNEY|SYD|IDCJDW2124";
+		String locationData = "SYDNEY|IDCJDW2124";
 		String positionData = "SYDNEY|-33.86|151.12|58";
 		String zoneData = "SYDNEY|Australia/Sydney";
 		int numDays = 1;

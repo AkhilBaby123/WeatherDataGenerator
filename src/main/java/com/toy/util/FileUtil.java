@@ -3,9 +3,10 @@ package com.toy.util;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import org.apache.log4j.Logger;
 
@@ -27,16 +28,18 @@ public class FileUtil {
 			logger.error("File Name cannot be NULL or empty..");
 			return null;
 		}
-
-		logger.info("Reading data from -> " + fileName);
-
-		FileReader reader = null;
 		BufferedReader br = null;
 		String st = null;
 		StringBuilder content = new StringBuilder();
+		ClassLoader classLoader = FileUtil.class.getClassLoader();
+		InputStream in = classLoader.getResourceAsStream(fileName);
+		if (in == null) {
+			logger.error("Cannot find the file " + fileName);
+			return null;
+		}
+		logger.info("Reading data from -> " + fileName);
 		try {
-			reader = new FileReader(new File(fileName));
-			br = new BufferedReader(reader);
+			br = new BufferedReader(new InputStreamReader(in));
 			while ((st = br.readLine()) != null) {
 				content.append(st);
 				content.append(CommonConstants.NEWLINE);
@@ -45,16 +48,25 @@ public class FileUtil {
 			logger.error(e.getMessage());
 			return null;
 		} finally {
-			if (reader != null) {
-				reader.close();
-			}
 			if (br != null) {
 				br.close();
 			}
+			in.close();
 		}
 		return content.toString();
 	}
 
+	/**
+	 * Write the contents passed to the file name specified
+	 * 
+	 * @param fileName
+	 *            the file name
+	 * @param content
+	 *            the content
+	 * @param append
+	 *            arguments which specifies whether to append data to the file
+	 * @throws IOException
+	 */
 	public static void writeToFile(String fileName, String content, boolean append) throws IOException {
 		if (CommonUtil.isNullOrEmpty(fileName) || CommonUtil.isNullOrEmpty(content)) {
 			logger.error("File Name/Content to write is NULL/Empty..");
@@ -62,12 +74,13 @@ public class FileUtil {
 		}
 		FileWriter writer = null;
 		BufferedWriter bw = null;
+		logger.info("Writing data to -> " + fileName);
 		try {
 			writer = new FileWriter(new File(fileName), append);
 			bw = new BufferedWriter(writer);
 			bw.write(content);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		} finally {
 			if (bw != null) {
 				bw.close();
@@ -98,7 +111,7 @@ public class FileUtil {
 	 */
 	public static void deleteFile(String fileName) {
 		if (CommonUtil.isNullOrEmpty(fileName)) {
-			logger.error("Input Argument (File Name) cannot be NULL/empty");
+			logger.error("Input Argument (File Name) cannot be NULL/empty..<FileUtil.DeleteFile>");
 			return;
 		}
 		File file = new File(fileName);
