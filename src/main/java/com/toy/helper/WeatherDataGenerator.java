@@ -20,14 +20,15 @@ import com.toy.util.DateUtil;
 import com.toy.util.UrlUtil;
 
 /**
- * Class responsible for building historical values - temperature, pressure and
- * relative humidity information. The historical values build will be supplied
- * to Arima model for prediction.
+ * This class is responsible for building historical values to be supplied to
+ * the ARIMA model. It builds - temperature, pressure and relative humidity
+ * information. The historical values built will be supplied to ARIMA model for
+ * prediction. The historical values are downloaded from BOM website.
  * 
- * This class is also responsible for generating output data in a predefined
- * format.
+ * This class is also responsible for generating the predicted results in a
+ * predefined format. The format is as below.
  * 
- * Output format:- Forecast_Date|Location|Latitude,Longitude,
+ * Forecast_Date|Location|Latitude,Longitude,
  * Elevation|LocalTime|Condition|Temperature|Pressure|Relative_Humidity
  * 
  * @author Akhil
@@ -117,9 +118,10 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * This method reads BOM observations from BOM site.Based on forecast date
-	 * argument, it will read data for three months - data for forecast month;
-	 * one month prior to forecast month and one month after forecast month.
+	 * This method reads/downloads historical weather data for a city. The
+	 * weather data will be downloaded from BOM website. It will download three
+	 * months of data - data for the forecast month, for one month prior to
+	 * forecast month and one month after forecast month
 	 * 
 	 * @param bomCode
 	 *            the BOM code
@@ -145,8 +147,8 @@ public class WeatherDataGenerator {
 	}
 
 	/**
-	 * This method takes weather prediction results as input parameters and generate a
-	 * string in a format similar to the output format
+	 * This method takes weather prediction results as input parameters and
+	 * generate a string in a format similar to the output format
 	 * 
 	 * @param cityName
 	 *            the city name
