@@ -15,14 +15,14 @@
   Here forecastSize is the number of days for which forecasting needs to be done. 
    
   
-  For each of the weather condition (temperature for example), the above method will be called to get the future values. Once the results are available, it will be written to an output file a format as given below. 
+  For each of the weather condition (temperature for example), the above method will be called to get the future values. Once the results are available, it will be written to an output file in a format as given below. 
   
   ```
   Forecast_Date|City|Latitude,Longitude,Elevation|Local_Time|Condition|Temperature|Pressure|Relative_Humidity
   
   ```
   
-  Sample Output for Sydney location is as given below:-
+  Sample output for Sydney location is as given below:-
   
   ```
   2017-12-12|SYDNEY|-33.86,151.12,58|2017-10-11T04:02:23+1100|SUNNY|24.44|1014.89|57.0
