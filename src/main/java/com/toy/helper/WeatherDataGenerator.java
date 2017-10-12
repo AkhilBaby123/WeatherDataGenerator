@@ -92,7 +92,7 @@ public class WeatherDataGenerator {
 
 	/**
 	 * Predict Weather condition based on Temperature, Humidity and sunshine
-	 * hours
+	 * hours.
 	 * 
 	 * @param temp
 	 *            the temperature
