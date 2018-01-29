@@ -26,6 +26,7 @@ public class BomObservation {
 	private String windSpeed;// position 14
 	private String pressure;// position 15
 	private String formattedDate; // the date value in yyyy-MM-dd format
+	private String test;
 
 	public BomObservation(String date, String minTemp, String maxTemperature, String sunshine, String windSpeed,
 			String relativeHumidity, String cloudAmount, String pressure) {
